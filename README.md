@@ -43,8 +43,7 @@ Detailed descriptions of each step are provided in the documentation.
 
 ## Examples
 
-An example dataset is provided here:
-[example dataset](https://drive.google.com/drive/folders/17Qsv3mLei5XZf_g6K7UqtO_a4qKljpi7?usp=drive_link)
+An example dataset is provided[here](https://drive.google.com/drive/folders/17Qsv3mLei5XZf_g6K7UqtO_a4qKljpi7?usp=drive_link)
 
 The dataset consists of a single-plane, single-channel neuronal recording.
 It is intended to demonstrate the segmentation workflow and to serve as a
