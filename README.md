@@ -1,44 +1,68 @@
-# Neuronal Cell Segmentation (Cellpose-SAM + Cellpose 3)
+# Neuronal Cell Segmentation Workflow
 
-A practical, end-to-end workflow for **neuronal cell segregation/segmentation** using **Cellpose-SAM as the default**, with **Cellpose 3 as a fallback + training path**.  
-Primary goal: **identify all neurons that are recognizable by human manual correction** (coverage/recall-focused).  
-Boundary-level precision is **not** the main objective.
+## Motivation
 
----
+This repository provides a practical workflow for neuronal cell segmentation
+using Cellpose-SAM and Cellpose 3 with human-in-the-loop iteration.
 
-## What this repo provides
-
-- A step-by-step **segmentation workflow** (human-in-the-loop, reproducible)
-- From-scratch usage guides for:
-  - **Cellpose-SAM**
-  - **Cellpose 3**
-- Example inputs/outputs to help you replicate results quickly
-- Optional: periodic training loop for Cellpose 3 using manually corrected masks
+The primary goal is to identify all neurons that are recognizable by human
+manual correction, with iterative training to reduce manual effort over time.
+This workflow prioritizes neuron identification (coverage / recall) rather than
+precise boundary alignment.
 
 ---
 
-## Workflow overview
+## What This Repo Provides
 
-**Default approach:** run Cellpose-SAM first.  
-**Fallback:** if Cellpose-SAM clearly under-detects neurons, run Cellpose 3 and proceed with manual correction + training.
+This repository provides:
 
-High-level flow:
+- A step-by-step workflow for neuronal cell segregation
+- Guidance on using Cellpose-SAM and Cellpose 3 from scratch
+- A comparison-based strategy to select between models
+- A manual correction and training loop for Cellpose 3
+- Example scripts and example runs for reproducibility
 
-1. **Run Cellpose-SAM** on an image
-2. **Human check** vs rough visual expectation (qualitative)
-3. If **under-detection** is obvious → **run Cellpose 3** on the same image
-4. Choose the output with higher **correctness** (coverage of human-identifiable neurons)
-5. **Manual correction** (ground truth)
-6. **Accumulate corrected masks** → periodically **train Cellpose 3**
-7. Iterate to reduce manual correction over time
+The repository is designed so that a user without prior experience with
+Cellpose-SAM or Cellpose 3 can follow the workflow and perform neuronal
+segmentation.
 
 ---
 
-## Quick start
+## Workflow Overview
 
-> This section is intentionally minimal. Detailed guides are in `docs/`.
+The workflow consists of the following stages:
 
-### 1) Install
+1. Run Cellpose-SAM as the default segmentation method
+2. Compare the output with qualitative human expectation
+3. Apply Cellpose 3 when Cellpose-SAM under-detects neurons
+4. Select the output that best matches human-identifiable neurons
+5. Perform manual correction on the selected output
+6. Accumulate corrected masks as training data
+7. Periodically train Cellpose 3 to reduce future under-detection
+
+Detailed descriptions of each step are provided in the documentation.
+
+---
+
+## Examples
+
+The `examples/` directory contains:
+
+- Example neuronal images
+- Corresponding segmentation outputs from Cellpose-SAM and Cellpose 3
+- A complete example run demonstrating the workflow from raw image to
+  manual correction and training decision
+
+The examples are intended to show how the workflow is applied in practice
+and to serve as a reference for new users.
+
+---
+
+## Quick Start
+
+1. Clone this repository
+
+2. Install dependencies
 
 ```bash
 pip install -r requirements.txt
