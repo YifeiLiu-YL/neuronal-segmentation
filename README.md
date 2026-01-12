@@ -56,5 +56,7 @@ reference for running Cellpose-SAM, Cellpose 3, and manual correction.
 
 2. Install dependencies
 
-```bash
-pip install -r requirements.txt
+
+## FAQ
+
+See FAQs [here](https://github.com/YifeiLiu-YL/neuronal-segmentation/blob/main/FAQ.md).
