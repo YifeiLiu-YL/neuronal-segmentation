@@ -38,7 +38,7 @@ The workflow consists of the following stages:
 6. Accumulate corrected masks as training data
 7. Periodically train Cellpose 3 to reduce future under-detection
 
-Detailed descriptions of each step are provided in the documentation.
+Detailed descriptions of each step are provided [here](https://github.com/YifeiLiu-YL/neuronal-segmentation/blob/main/Segmentation%20Workflow.md).
 
 
 ## Examples
