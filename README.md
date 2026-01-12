@@ -10,7 +10,6 @@ manual correction, with iterative training to reduce manual effort over time.
 This workflow prioritizes neuron identification (coverage / recall) rather than
 precise boundary alignment.
 
----
 
 ## What This Repo Provides
 
@@ -26,7 +25,6 @@ The repository is designed so that a user without prior experience with
 Cellpose-SAM or Cellpose 3 can follow the workflow and perform neuronal
 segmentation.
 
----
 
 ## Workflow Overview
 
@@ -42,21 +40,16 @@ The workflow consists of the following stages:
 
 Detailed descriptions of each step are provided in the documentation.
 
----
 
 ## Examples
 
-The `examples/` directory contains:
+An example dataset is provided here:
+[example dataset](https://drive.google.com/drive/folders/17Qsv3mLei5XZf_g6K7UqtO_a4qKljpi7?usp=drive_link)
 
-- Example neuronal images
-- Corresponding segmentation outputs from Cellpose-SAM and Cellpose 3
-- A complete example run demonstrating the workflow from raw image to
-  manual correction and training decision
+The dataset consists of a single-plane, single-channel neuronal recording.
+It is intended to demonstrate the segmentation workflow and to serve as a
+reference for running Cellpose-SAM, Cellpose 3, and manual correction.
 
-The examples are intended to show how the workflow is applied in practice
-and to serve as a reference for new users.
-
----
 
 ## Quick Start
 
