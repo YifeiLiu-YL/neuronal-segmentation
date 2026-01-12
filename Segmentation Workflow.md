@@ -1,3 +1,5 @@
+# Segmentation Workflow
+
 ## Step 1. Default Segmentation with Cellpose-SAM
 
 Apply Cellpose-SAM to all images as the initial segmentation step.
