@@ -69,6 +69,7 @@ The corrected masks are treated as ground truth for subsequent training.
 ## Step 6. Collect Training Data
 
 Store manually corrected masks as training data for Cellpose 3.
+
 See the training process [here](https://github.com/YifeiLiu-YL/neuronal-segmentation/blob/main/training.md).
 
 For each training sample, record:
