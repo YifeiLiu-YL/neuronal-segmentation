@@ -29,7 +29,7 @@ If the Cellpose-SAM output reasonably captures all identifiable neurons, it may 
 
 ## Step 3. Apply Cellpose 3 for Comparison (If Needed)
 
-If Cellpose-SAM output shows clear under-detection, apply Cellpose 3 to the same images.
+If Cellpose-SAM output shows clear under-detection, apply [Cellpose3](https://github.com/YifeiLiu-YL/neuronal-segmentation/blob/main/cellpose3.md) to the same images.
 
 - Cellpose 3 is used here as a comparison method
 - No assumption is made that Cellpose 3 will always outperform Cellpose-SAM
