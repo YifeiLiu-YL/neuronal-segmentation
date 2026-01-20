@@ -286,3 +286,82 @@ The corrected segmentation is treated as ground truth for training purposes.
 - Manual correction is expected to decrease over time as training improves
 - Consistency in correction strategy is more important than precision
 - Human judgment is central to this workflow
+
+---
+
+## 5. Train a Cellpose 3 Model
+
+This section describes how to train a Cellpose 3 model using manually corrected
+segmentation masks.
+
+Training allows Cellpose 3 to learn dataset-specific features and reduce
+under-detection in future segmentation runs.
+
+
+### Prepare Training Data
+
+Training data consists of:
+- Original images
+- Corresponding manually corrected masks
+
+For training in the Cellpose GUI:
+- Images and their corrected masks should be placed in the same folder
+- All images should be from the same imaging modality
+- Masks should reflect neuron identity, not precise boundaries
+
+It is recommended to start with a small number of annotated images.
+In practice, 4–10 images are often sufficient to see improvement.
+
+<!-- Screenshot 10:
+Folder structure showing images and corresponding mask files together.
+-->
+
+
+### Launch Training in the GUI
+
+To train a new model:
+1. Open the Cellpose GUI
+2. Load the folder containing training images and masks
+3. Open the `Models` menu
+4. Select the option to train a new model using images and masks in the folder
+
+<!-- Screenshot 11:
+Models menu highlighting the option to train a new model.
+-->
+
+
+### Training Settings
+
+When the training window opens:
+- Use the default training parameters
+- Do not modify learning rate, epochs, or normalization unless necessary
+- Assign a descriptive name to the trained model
+
+Default settings are sufficient for most neuronal datasets and help avoid
+overfitting.
+
+<!-- Screenshot 12:
+Training parameter window with default settings.
+-->
+
+
+### Run Training
+
+Start training and allow the process to complete.
+
+During training:
+- Progress will be displayed in the GUI
+- No interaction is required
+
+After training finishes:
+- The trained model will be saved automatically
+- The model will appear under user-trained models in the GUI
+
+
+### Notes
+
+- Training is performed periodically, not after every image
+- Training focuses on reducing missed neurons
+- More training data can be added incrementally over time
+
+Once training is complete, the trained model can be applied to new images.
