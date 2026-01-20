@@ -56,6 +56,8 @@ The purpose of this step is only to verify that Cellpose 3 is installed and
 running correctly.
 Once the GUI is open, proceed to loading data and basic visualization.
 
+---
+
 ## 2. Load Data and Basic Visualization
 
 This section covers how to load image data into the Cellpose GUI and how to
@@ -64,7 +66,6 @@ the interface before running segmentation.
 
 At this stage, it is not necessary to fully understand all views or settings.
 
----
 
 ### Load Image Data
 
@@ -91,7 +92,6 @@ File menu showing "Load image" and "Load folder" options.
 Cellpose GUI with a neuronal image successfully loaded.
 -->
 
----
 
 ### Image Display Modes
 
@@ -119,7 +119,6 @@ At this stage, it is sufficient to focus on:
 Side-by-side or toggled view showing "image" and "cellprob".
 -->
 
----
 
 ### Notes
 
