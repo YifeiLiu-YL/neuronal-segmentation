@@ -35,9 +35,13 @@ A window should open displaying the Cellpose GUI.
 <!-- Screenshot 1: Cellpose GUI main window immediately after launch, before loading any images. This screenshot confirms that the installation and launch were successful. -->
 
 At this stage:
+
 No images need to be loaded
+
 No parameters need to be adjusted
+
 No models need to be selected
+
 
 The purpose of this step is only to verify that Cellpose 3 is installed and
 running correctly.
