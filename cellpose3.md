@@ -127,6 +127,7 @@ Once the image is loaded and visible, proceed to running segmentation.
 
 ---
 
+
 ## 3. Run Segmentation (No Training)
 
 This section describes how to run Cellpose 3 for segmentation without any
@@ -199,3 +200,89 @@ If the segmentation output appears reasonable, proceed to manual correction.
 If clear under-detection is observed, manual correction and training will be
 introduced in the next steps.
 
+---
+
+## 4. Manual Correction
+
+This section describes how to manually correct segmentation results in Cellpose.
+Manual correction is used to fix missed neurons and remove obvious false positives.
+
+The purpose of manual correction is to identify neurons that are recognizable
+by human inspection, not to achieve perfect boundary accuracy.
+
+
+### When to Perform Manual Correction
+
+Manual correction is performed when:
+- Segmentation output misses neurons visible to the human eye
+- Obvious false positive regions are present
+
+Manual correction is not required when:
+- Boundaries are slightly misaligned but neuron identity is correct
+- Minor over-segmentation does not affect neuron identification
+
+
+### Deleting False Positive ROIs
+
+To delete an incorrect ROI:
+1. Click on the ROI to select it
+2. Press the delete key or use the delete option in the GUI
+
+Multiple ROIs can be deleted by selecting a region and removing all ROIs within
+that selection.
+
+<!-- Screenshot 7:
+Selecting and deleting a false positive ROI.
+-->
+
+Removing false positives helps prevent incorrect regions from being included
+in the training data.
+
+
+### Adding Missed Neurons
+
+To add a missed neuron:
+1. Right-click near the boundary of the neuron
+2. A red tracing circle will appear
+3. Trace the approximate outline of the neuron
+4. Complete the loop to create a new ROI mask
+
+The traced boundary does not need to be precise.
+The ROI only needs to capture the neuron as a distinct object.
+
+<!-- Screenshot 8:
+Right-click tracing process showing a red outline being drawn.
+-->
+
+---
+
+
+### Manual Correction Strategy
+
+When performing manual correction:
+- Focus on adding missed neurons first
+- Remove only clearly incorrect ROIs
+- Do not spend time refining boundaries
+- Do not attempt to fix every minor imperfection
+
+The goal is correctness of neuron identification, not visual perfection.
+
+
+### Before and After Check
+
+After manual correction:
+- Compare the corrected segmentation with the original output
+- Confirm that all neurons identifiable by human inspection are now included
+
+<!-- Screenshot 9:
+Comparison of segmentation results before and after manual correction.
+-->
+
+The corrected segmentation is treated as ground truth for training purposes.
+
+
+### Notes
+
+- Manual correction is expected to decrease over time as training improves
+- Consistency in correction strategy is more important than precision
+- Human judgment is central to this workflow
