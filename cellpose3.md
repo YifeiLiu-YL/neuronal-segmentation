@@ -1,3 +1,12 @@
+# Cellpose 3 Workflow
+
+This document describes how to use Cellpose 3 within the neuronal cell
+segmentation workflow of this repository.
+
+Cellpose 3 is used when Cellpose-SAM under-detects neurons and when supervised
+training is required to recover neurons identifiable by human inspection.
+
+---
 
 ## 1. Environment Setup and Launch
 
