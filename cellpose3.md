@@ -127,3 +127,78 @@ Side-by-side or toggled view showing "image" and "cellprob".
 - The purpose of this step is familiarity with the GUI and visualization only
 
 Once the image is loaded and visible, proceed to running segmentation.
+
+---
+
+## 3. Run Segmentation (No Training)
+
+This section describes how to run Cellpose 3 for segmentation without any
+manual training. At this stage, Cellpose 3 is used only to generate a baseline
+segmentation for comparison.
+
+The goal is to assess whether Cellpose 3 can identify neurons that were missed
+by Cellpose-SAM.
+
+
+### Select a Built-in Model
+
+Before running segmentation, select a built-in Cellpose model.
+
+In the GUI:
+1. Locate the model selection dropdown
+2. Choose a built-in model appropriate for your data
+   - For most neuronal soma segmentation, the default cytoplasm model is sufficient
+   - Do not select a trained custom model at this stage
+
+Default model settings are usually adequate for initial segmentation.
+
+<!-- Screenshot 5:
+Model selection dropdown showing built-in Cellpose models.
+-->
+
+
+### Run Segmentation
+
+To run segmentation:
+1. Ensure an image is loaded
+2. Click the `Run` button in the GUI
+
+Cellpose will process the image and display segmentation masks overlaid on the
+original image.
+
+<!-- Screenshot 6:
+Cellpose GUI showing segmentation results with colored ROI masks over the image.
+-->
+
+At this point:
+- Segmentation results do not need to be perfect
+- Boundary alignment does not need to be precise
+- The primary focus is whether neurons are detected at all
+
+
+### Initial Inspection
+
+After segmentation, visually inspect the results.
+
+Key questions to consider:
+- Are neurons visible to the human eye detected?
+- Are there obvious missed neurons?
+- Are the detected regions reasonable in size and location?
+
+Minor over-segmentation or boundary mismatch is acceptable.
+Clear under-detection of identifiable neurons is not acceptable.
+
+Do not perform manual correction yet. The purpose of this step is only to
+generate a segmentation output for comparison.
+
+
+### Notes
+
+- Do not adjust advanced parameters unless segmentation is clearly unusable
+- Do not begin training at this stage
+- This step is intended as a fast baseline assessment
+
+If the segmentation output appears reasonable, proceed to manual correction.
+If clear under-detection is observed, manual correction and training will be
+introduced in the next steps.
+
