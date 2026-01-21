@@ -41,7 +41,7 @@ python -m cellpose
 ```
 A window should open displaying the Cellpose GUI.
 
-<!-- Screenshot 1: Cellpose GUI main window immediately after launch, before loading any images. This screenshot confirms that the installation and launch were successful. -->
+![test](figures/GUI.png)
 
 At this stage:
 - No images need to be loaded
