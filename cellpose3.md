@@ -70,9 +70,9 @@ Cellpose supports loading a single image or a folder of images.
 
 To load data:
 1. Open the Cellpose GUI
-2. Click `File` → `Load image` to load a single image  
-   or  
-   Click `File` → `Load folder` to load multiple images
+2. Click `File` → `Load image` to load a single image
+   or
+   drag the image directly into GUI - If the image you uploaded is inside a folder, GUI automatically identifies the whole folder and you can switch images when clicking the right or left button
 
 Supported image formats include common microscopy formats such as `.tif` and
 `.tiff`.
@@ -81,13 +81,9 @@ If a folder is loaded, images can be navigated using the left and right arrow
 keys on the keyboard. Make sure the image display area is selected before
 using the arrow keys.
 
-<!-- Screenshot 2:
-File menu showing "Load image" and "Load folder" options.
--->
+![test](figures/loadimage.png)
 
-<!-- Screenshot 3:
-Cellpose GUI with a neuronal image successfully loaded.
--->
+![test](figures/successfullyloadedimage.png)
 
 
 ### Image Display Modes
