@@ -83,34 +83,7 @@ using the arrow keys.
 
 ![test](figures/loadimage.png)
 
-![test](figures/successfullyloadedimage.png)
-
-
-### Image Display Modes
-
-Cellpose provides several visualization modes that can be toggled in the GUI.
-Only a subset of these views is relevant for this workflow.
-
-Commonly used views include:
-
-- `image`  
-  Displays the original image as loaded.
-
-- `cellprob`  
-  Displays the probability map indicating how likely each pixel is to be
-  inside a cell. Brighter regions indicate higher confidence.
-
-- `gradXY`  
-  Displays the flow field used internally by Cellpose. This view is not
-  required for routine use and can generally be ignored.
-
-At this stage, it is sufficient to focus on:
-- `image` to inspect the raw data
-- `cellprob` to gain intuition about which regions the model considers cell-like
-
-<!-- Screenshot 4:
-Side-by-side or toggled view showing "image" and "cellprob".
--->
+![test](figures/successfullyLoadedImage.png)
 
 
 ### Notes
@@ -134,35 +107,26 @@ The goal is to assess whether Cellpose 3 can identify neurons that were missed
 by Cellpose-SAM.
 
 
-### Select a Built-in Model
-
-Before running segmentation, select a built-in Cellpose model.
-
-In the GUI:
-1. Locate the model selection dropdown
-2. Choose a built-in model appropriate for your data
-   - For most neuronal soma segmentation, the default cytoplasm model is sufficient
-   - Do not select a trained custom model at this stage
-
-Default model settings are usually adequate for initial segmentation.
-
-<!-- Screenshot 5:
-Model selection dropdown showing built-in Cellpose models.
--->
-
-
 ### Run Segmentation
 
 To run segmentation:
 1. Ensure an image is loaded
-2. Click the `Run` button in the GUI
+2. In'Views', Use the appropriate view for your data, such as`RGB`, `Green`, `Blue` etc.
+   ![test](figures/Views.png)
+4. Choose a built-in model appropriate for your data
+   - For most neuronal soma segmentation, the default cytoplasm model is sufficient
+   - Do not select a trained custom model at this stage
+   - Default model settings are usually adequate for initial segmentation.
+5. Click the `Run CPSAM` button in the GUI
 
 Cellpose will process the image and display segmentation masks overlaid on the
 original image.
 
-<!-- Screenshot 6:
-Cellpose GUI showing segmentation results with colored ROI masks over the image.
--->
+![test](figures/GUIAfterFirstRun.png)
+
+If you want a clearer image showing only the cells being segmented, you can go to `Views` and click onto `cellprob`
+
+![test](figures/cellprob.png)
 
 At this point:
 - Segmentation results do not need to be perfect
