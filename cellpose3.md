@@ -22,6 +22,14 @@ It is recommended to use a dedicated conda environment for Cellpose 3.
 conda create -n cellpose3 python=3.10 -y
 conda activate cellpose3
 ```
+Install Pytorch
+```
+pip install torch torchvision torchaudio
+```
+Install Cellpose 3
+```
+pip install cellpose==3.0.11
+```
 ### Install Cellpose with GUI Support
 
 Install Cellpose including the graphical user interface:
