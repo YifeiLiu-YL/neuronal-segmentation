@@ -119,13 +119,15 @@ by Cellpose-SAM.
 
 To run segmentation:
 1. Ensure an image is loaded
-2. In'Views', Use the appropriate view for your data, such as`RGB`, `Green`, `Blue` etc.
+2. Use`ImageJ` or `FIJI` to measure the diameter of the cell and enter the number in the `segmentation`section showing `diameter(pixels):`
+3. In`Views`, Use the appropriate view for your data, such as`RGB`, `Green`, `Blue` etc.
    ![test](figures/Views.png)
-4. Choose a built-in model appropriate for your data
+5. Choose a built-in model appropriate for your data
    - For most neuronal soma segmentation, the default cytoplasm model is sufficient
    - Do not select a trained custom model at this stage
-   - Default model settings are usually adequate for initial segmentation.
-5. Click the `Run CPSAM` button in the GUI
+   - Default model settings are usually adequate for initial segmentation
+6. Choose the appropriate channels in `segmentations` accourding to your own channels used
+6. Click the `Run cyto3` button in the GUI
 
 Cellpose will process the image and display segmentation masks overlaid on the
 original image.
