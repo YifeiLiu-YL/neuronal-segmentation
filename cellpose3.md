@@ -61,6 +61,18 @@ The purpose of this step is only to verify that Cellpose 3 is installed and
 running correctly.
 Once the GUI is open, proceed to loading data and basic visualization.
 
+### After Installation
+
+After you have installed Cellpose 3, you can simply launch cellpose3 by:
+```bash
+conda activate cellpose3
+```
+to activate cellpose3 environment, and
+```bash
+python -m cellpose
+```
+to launch GUI. No need to re-install every time.
+
 ---
 
 ## 2. Load Data and Basic Visualization
