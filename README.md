@@ -26,10 +26,6 @@ Cellpose-SAM or Cellpose 3 can follow the workflow and perform neuronal
 segmentation.
 
 
-## Quick Start
-Please read [README](https://github.com/YifeiLiu-YL/neuronal-segmentation/blob/main/README.md) to gain a quick start.
-
-
 ## Workflow Overview
 
 The workflow consists of the following stages:
