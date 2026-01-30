@@ -122,12 +122,13 @@ To run segmentation:
 2. Use`ImageJ` or `FIJI` to measure the diameter of the cell and enter the number in the `segmentation`section showing `diameter(pixels):`
 3. In`Views`, Use the appropriate view for your data, such as`RGB`, `Green`, `Blue` etc.
    ![test](figures/Views.png)
-5. Choose a built-in model appropriate for your data
+4. Choose a built-in model appropriate for your data
    - For most neuronal soma segmentation, the default cytoplasm model is sufficient
    - Do not select a trained custom model at this stage
    - Default model settings are usually adequate for initial segmentation
-6. Choose the appropriate channels in `segmentations` accourding to your own channels used
-6. Click the `Run cyto3` button in the GUI
+5. Choose the appropriate channels in `segmentations` accourding to your own channels used
+6. Hit `calibrate` in `segmentations` 
+7. Click the `Run cyto3` button in the GUI
 
 Cellpose will process the image and display segmentation masks overlaid on the
 original image.
@@ -137,6 +138,10 @@ original image.
 If you want a clearer image showing only the cells being segmented, you can go to `Views` and click onto `cellprob`
 
 ![test](figures/cellprob.png)
+
+The `gradXY` view visualizes the internal flow field used by Cellpose to aggregate pixels toward cell centers. This view is primarily intended for model debugging and is not required for routine segmentation or manual correction in this workflow. Most users can safely ignore this view.
+![test](figures/gradXY.png)
+
 
 At this point:
 - Segmentation results do not need to be perfect
@@ -194,16 +199,15 @@ Manual correction is not required when:
 
 ### Deleting False Positive ROIs
 
-To delete an incorrect ROI:
-1. Click on the ROI to select it
-2. Press the delete key or use the delete option in the GUI
+There are 2 ways to delete an incorrect ROI:
+1. For deleting one ROI each time: Hold `command` and click on the target ROI (if you ae MAC user)/ Hold `ctrl` and click on the target ROI (if you ae Windows user)
+2. For deleting multiple ROIs each time:
+   - In `Drawing` click `region-select` or `click-select`
+   - Click `done` after selection
 
-Multiple ROIs can be deleted by selecting a region and removing all ROIs within
-that selection.
+The graph below shows using region select.
 
-<!-- Screenshot 7:
-Selecting and deleting a false positive ROI.
--->
+![test](figures/RegionSelect.png)
 
 Removing false positives helps prevent incorrect regions from being included
 in the training data.
@@ -220,9 +224,7 @@ To add a missed neuron:
 The traced boundary does not need to be precise.
 The ROI only needs to capture the neuron as a distinct object.
 
-<!-- Screenshot 8:
-Right-click tracing process showing a red outline being drawn.
--->
+![test](figures/AddROI.png)
 
 ---
 
@@ -244,9 +246,7 @@ After manual correction:
 - Compare the corrected segmentation with the original output
 - Confirm that all neurons identifiable by human inspection are now included
 
-<!-- Screenshot 9:
-Comparison of segmentation results before and after manual correction.
--->
+![test](figures/AfterCorrection.png)
 
 The corrected segmentation is treated as ground truth for training purposes.
 
@@ -272,32 +272,17 @@ under-detection in future segmentation runs.
 
 Training data consists of:
 - Original images
-- Corresponding manually corrected masks
-
-For training in the Cellpose GUI:
-- Images and their corrected masks should be placed in the same folder
-- All images should be from the same imaging modality
-- Masks should reflect neuron identity, not precise boundaries
-
-It is recommended to start with a small number of annotated images.
-In practice, 4–10 images are often sufficient to see improvement.
-
-<!-- Screenshot 10:
-Folder structure showing images and corresponding mask files together.
--->
+- Corresponding manually corrected masks (obtained from the last part)
 
 
 ### Launch Training in the GUI
 
 To train a new model:
-1. Open the Cellpose GUI
-2. Load the folder containing training images and masks
-3. Open the `Models` menu
-4. Select the option to train a new model using images and masks in the folder
+1. Have the manual corrected segmentation opened in the Cellpose GUI
+2. Open the `Models` menu
+3. Select the option to train a new model using images and masks in the folder
 
-<!-- Screenshot 11:
-Models menu highlighting the option to train a new model.
--->
+![test](figures/ModelBar.png)
 
 
 ### Training Settings
@@ -310,9 +295,7 @@ When the training window opens:
 Default settings are sufficient for most neuronal datasets and help avoid
 overfitting.
 
-<!-- Screenshot 12:
-Training parameter window with default settings.
--->
+![test](figures/TrainNewModel.png)
 
 
 ### Run Training
@@ -326,6 +309,8 @@ During training:
 After training finishes:
 - The trained model will be saved automatically
 - The model will appear under user-trained models in the GUI
+
+In practice, 4–5 images for training are often sufficient to see improvement in machine learning.
 
 
 ### Notes
