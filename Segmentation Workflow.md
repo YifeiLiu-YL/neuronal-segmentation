@@ -2,7 +2,7 @@
 
 ## Step 1. Default Segmentation with Cellpose-SAM
 
-Apply [Cellpose-SAM](https://github.com/YifeiLiu-YL/neuronal-segmentation/blob/main/cellpose_sam.md) to all images as the initial segmentation step.
+Apply [Cellpose-SAM](https://github.com/YifeiLiu-YL/neuronal-segmentation/blob/main/Cellpose%20SAM%20Workbook.pdf) to all images as the initial segmentation step.
 
 - No manual training is performed
 - Default or minimally adjusted parameters are used
