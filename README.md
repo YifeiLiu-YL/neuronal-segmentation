@@ -26,6 +26,10 @@ Cellpose-SAM or Cellpose 3 can follow the workflow and perform neuronal
 segmentation.
 
 
+## Quick Start
+Please read [README](https://github.com/YifeiLiu-YL/neuronal-segmentation/blob/main/README.md) to gain a quick start.
+
+
 ## Workflow Overview
 
 The workflow consists of the following stages:
@@ -48,13 +52,6 @@ An example dataset is provided [here](https://drive.google.com/drive/folders/17Q
 The dataset consists of a single-plane, single-channel neuronal recording.
 It is intended to demonstrate the segmentation workflow and to serve as a
 reference for running Cellpose-SAM, Cellpose 3, and manual correction.
-
-
-## Quick Start
-
-1. Clone this repository
-
-2. Install dependencies
 
 
 ## FAQ
