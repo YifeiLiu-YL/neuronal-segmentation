@@ -63,7 +63,7 @@ Train Cellpose 3 periodically using accumulated training data.
 Training frequency and dataset size may be adjusted based on project needs.
 
 
-## Step 8. Iterate and Update Workflow
+## Step 6. Iterate and Update Workflow
 
 After training:
 - Apply the updated Cellpose 3 model to relevant images
