@@ -320,3 +320,6 @@ In practice, 4–5 images for training are often sufficient to see improvement i
 - More training data can be added incrementally over time
 
 Once training is complete, the trained model can be applied to new images.
+
+You may see this trained model in `Other models` convenient for later use.
+![test](figures/SavedModel.png)
