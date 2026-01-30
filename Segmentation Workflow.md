@@ -52,18 +52,7 @@ Decision:
 - If both outputs are comparable, preference may be given to Cellpose-SAM
 
 
-## Step 5. Train Cellpose 3
-
-Train Cellpose 3 periodically using accumulated training data.
-
-- Training is performed after sufficient corrected examples are collected
-- Training focuses on cases where under-detection previously occurred
-- The goal is to reduce future manual correction
-
-Training frequency and dataset size may be adjusted based on project needs.
-
-
-## Step 6. Iterate and Update Workflow
+## Step 5. Iterate and Update Workflow
 
 After training:
 - Apply the updated Cellpose 3 model to relevant images
