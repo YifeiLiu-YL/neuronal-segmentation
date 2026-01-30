@@ -52,36 +52,7 @@ Decision:
 - If both outputs are comparable, preference may be given to Cellpose-SAM
 
 
-## Step 5. Manual Correction
-
-Perform manual correction on the selected segmentation output.
-
-Manual correction may include:
-- Adding missed neurons
-- Removing obvious false positives
-- Fixing gross segmentation errors
-
-Precise boundary refinement is optional and not required.
-
-The corrected masks are treated as ground truth for subsequent training.
-
-
-## Step 6. Collect Training Data
-
-Store manually corrected masks as training data for Cellpose 3.
-
-See the training process [here](https://github.com/YifeiLiu-YL/neuronal-segmentation/blob/main/training.md).
-
-For each training sample, record:
-- Original image
-- Initial segmentation method (Cellpose-SAM or Cellpose 3)
-- Reason for fallback, if applicable (e.g. under-detection)
-- Corrected segmentation mask
-
-Training data collection is incremental and ongoing.
-
-
-## Step 7. Train Cellpose 3 (Periodic)
+## Step 5. Train Cellpose 3
 
 Train Cellpose 3 periodically using accumulated training data.
 
